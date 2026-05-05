@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![Portfolio Preview](public/yuvraj2.png)
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-yuvraj--portfolio-00f5ff?style=for-the-badge&logo=vercel&logoColor=white)](https://yuvraj-portfolio-5s2r.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-YuvrajMangutkar-bf5fff?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YuvrajMangutkar)
