@@ -1,5 +1,9 @@
 # ─── Environment Variables (NEVER push these) ───
 .env
+
+# ─── Windows Scripts (local only) ───
+start.bat
+*.bat
 .env.local
 .env.*.local
 .env.production
