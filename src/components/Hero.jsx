@@ -264,8 +264,11 @@ function HeroProfilePic() {
       >
         <img
           src="/yuvraj2.png"
-          alt="Yuvraj Mangutkar"
+          alt="Yuvraj Mangutkar — Full Stack Developer & AI Engineer"
           className="w-full h-full object-cover object-top"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Subtle scan-line overlay */}
         <div
