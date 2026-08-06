@@ -3,14 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Mail, Github, Linkedin, Code2, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
-// ─────────────────────────────────────────────
-// EmailJS config — fill these in from:
-//   https://www.emailjs.com/  →  Email Services + Email Templates
-// Then add to your .env file:
-//   VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
-//   VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
-//   VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxxx
-// ─────────────────────────────────────────────
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID';
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
 const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY';
@@ -27,21 +19,21 @@ const socialLinks = [
     name: 'LinkedIn',
     icon: Linkedin,
     href: 'https://www.linkedin.com/in/yuvraj-mangutkar/',
-    color: '#bf5fff',
+    color: '#a855f7',
     username: 'Yuvraj Mangutkar',
   },
   {
     name: 'LeetCode',
     icon: Code2,
     href: 'https://leetcode.com/u/yuvraj_1961/',
-    color: '#ff0080',
+    color: '#3b82f6',
     username: '@yuvraj_1961',
   },
   {
     name: 'Email',
     icon: Mail,
     href: 'mailto:Mangutkaryuvraj@gmail.com',
-    color: '#00ff9f',
+    color: '#00f5ff',
     username: 'Mangutkaryuvraj@gmail.com',
   },
 ];
@@ -51,7 +43,7 @@ function FloatingLabel({ label, id, children }) {
     <div className="relative group">
       <label
         htmlFor={id}
-        className="absolute left-4 top-4 text-sm text-slate-500 font-mono pointer-events-none transition-all duration-300 group-focus-within:-top-3 group-focus-within:text-xs group-focus-within:text-[#00f5ff] group-focus-within:bg-[#0a0f1e] group-focus-within:px-1 group-focus-within:rounded"
+        className="absolute left-4 top-4 text-sm text-slate-400 font-mono pointer-events-none transition-all duration-300 group-focus-within:-top-3 group-focus-within:text-xs group-focus-within:text-[#00f5ff] group-focus-within:bg-[#030712] group-focus-within:px-1 group-focus-within:rounded"
       >
         {label}
       </label>
@@ -65,7 +57,7 @@ export default function Contact() {
   const formRef = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null); // 'sending' | 'sent' | 'error'
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,7 +82,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 grid-bg opacity-30" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00f5ff]/5 rounded-full blur-3xl" />
 
@@ -107,8 +98,8 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#bf5fff] mx-auto rounded-full" />
-          <p className="text-slate-400 mt-6 max-w-md mx-auto text-sm">
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#a855f7] mx-auto rounded-full" />
+          <p className="text-slate-300 mt-6 max-w-md mx-auto text-sm">
             Have an opportunity, a project idea, or just want to chat? My inbox is always open! 🚀
           </p>
         </motion.div>
@@ -123,7 +114,7 @@ export default function Contact() {
           >
             <div>
               <h3 className="text-xl font-bold text-white mb-2">Find me on</h3>
-              <p className="text-slate-400 text-sm">
+              <p className="text-slate-300 text-sm">
                 Connect with me on any of these platforms — I'm always up for a conversation!
               </p>
             </div>
@@ -155,7 +146,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold text-white text-sm">{link.name}</div>
-                      <div className="font-mono text-xs text-slate-500">{link.username}</div>
+                      <div className="font-mono text-xs text-slate-400">{link.username}</div>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
                       <motion.div
@@ -179,10 +170,10 @@ export default function Contact() {
               className="glass-card rounded-xl p-5"
             >
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded-full bg-[#00ff9f] animate-pulse" />
-                <span className="font-mono text-sm text-[#00ff9f] font-semibold">Currently Available</span>
+                <div className="w-3 h-3 rounded-full bg-[#00f5ff] animate-pulse" />
+                <span className="font-mono text-sm text-[#00f5ff] font-semibold">Currently Available</span>
               </div>
-              <p className="text-slate-400 text-xs font-mono">
+              <p className="text-slate-300 text-xs font-mono">
                 Open to Full Stack &amp; AI Engineering roles • Internships • Freelance Projects
               </p>
             </motion.div>
@@ -197,7 +188,7 @@ export default function Contact() {
             <form ref={formRef} onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-6">
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">Send a Message</h3>
-                <p className="text-slate-500 text-xs font-mono">I'll respond within 24 hours</p>
+                <p className="text-slate-400 text-xs font-mono">I'll respond within 24 hours</p>
               </div>
 
               {/* Name */}
@@ -242,7 +233,6 @@ export default function Contact() {
                 />
               </FloatingLabel>
 
-              {/* Hidden field — destination email for EmailJS template */}
               <input type="hidden" name="to_email" value="mangutkaryuvraj@gmail.com" />
 
               {/* Status messages */}
@@ -250,7 +240,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 text-[#ff0080] text-sm font-mono px-1"
+                  className="flex items-center gap-2 text-[#a855f7] text-sm font-mono px-1"
                 >
                   <AlertCircle size={15} />
                   <span>Failed to send. Please try emailing directly at mangutkaryuvraj@gmail.com</span>
@@ -267,18 +257,18 @@ export default function Contact() {
                 style={{
                   background:
                     status === 'sent'
-                      ? 'linear-gradient(135deg, #00ff9f30, #00ff9f20)'
+                      ? 'linear-gradient(135deg, #00f5ff30, #00f5ff20)'
                       : status === 'error'
-                      ? 'linear-gradient(135deg, #ff008030, #ff008020)'
-                      : 'linear-gradient(135deg, #00f5ff20, #bf5fff20)',
+                      ? 'linear-gradient(135deg, #a855f730, #a855f720)'
+                      : 'linear-gradient(135deg, #00f5ff20, #a855f720)',
                   border:
                     status === 'sent'
-                      ? '1px solid #00ff9f50'
+                      ? '1px solid #00f5ff50'
                       : status === 'error'
-                      ? '1px solid #ff008050'
+                      ? '1px solid #a855f750'
                       : '1px solid #00f5ff30',
                   color:
-                    status === 'sent' ? '#00ff9f' : status === 'error' ? '#ff0080' : '#00f5ff',
+                    status === 'sent' ? '#00f5ff' : status === 'error' ? '#a855f7' : '#00f5ff',
                 }}
                 id="contact-submit-btn"
               >

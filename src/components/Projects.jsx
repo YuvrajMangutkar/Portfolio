@@ -12,7 +12,7 @@ const projects = [
     github: 'https://github.com/YuvrajMangutkar/Project_Manager',
     live: 'https://project-manager-vu3e.onrender.com/',
     color: '#00f5ff',
-    accentColor: '#bf5fff',
+    accentColor: '#a855f7',
     icon: Cpu,
     featured: true,
   },
@@ -24,7 +24,7 @@ const projects = [
     tags: ['Python', 'DSS', 'Data Science', 'React', 'Analysis'],
     github: 'https://github.com/devang404/EV-DSS',
     live: 'https://ev-dss.vercel.app/',
-    color: '#bf5fff',
+    color: '#a855f7',
     accentColor: '#00f5ff',
     icon: Globe,
     featured: false,
@@ -119,7 +119,7 @@ function TiltCard({ project, index }) {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-[#bf5fff] hover:bg-[#bf5fff]/10 transition-all"
+                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-slate-400 hover:text-[#a855f7] hover:bg-[#a855f7]/10 transition-all"
                 id={`project-live-${project.id}`}
               >
                 <ExternalLink size={16} />
@@ -136,7 +136,7 @@ function TiltCard({ project, index }) {
           </h3>
 
           {/* Description */}
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">{project.description}</p>
+          <p className="text-slate-300 text-sm leading-relaxed mb-6">{project.description}</p>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
@@ -191,7 +191,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-32 overflow-hidden">
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#00f5ff]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff0080]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#a855f7]/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -206,8 +206,8 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Things I've <span className="gradient-text">Built</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#bf5fff] mx-auto rounded-full" />
-          <p className="text-slate-400 mt-6 max-w-lg mx-auto text-sm">
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#a855f7] mx-auto rounded-full" />
+          <p className="text-slate-300 mt-6 max-w-lg mx-auto text-sm">
             Here are some projects I've built — from AI systems to full-stack web apps
           </p>
         </motion.div>
@@ -227,7 +227,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mt-16"
         >
-          <p className="text-slate-400 text-sm mb-4 font-mono">Want to see more?</p>
+          <p className="text-slate-300 text-sm mb-4 font-mono">Want to see more?</p>
           <motion.a
             href="https://github.com/YuvrajMangutkar"
             target="_blank"

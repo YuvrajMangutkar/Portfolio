@@ -14,7 +14,7 @@ const skillCategories = [
   },
   {
     title: 'Backend & DevOps',
-    color: '#bf5fff',
+    color: '#a855f7',
     skills: [
       { name: 'Python', level: 90 },
       { name: 'Java', level: 78 },
@@ -24,7 +24,7 @@ const skillCategories = [
   },
   {
     title: 'AI & Data',
-    color: '#ff0080',
+    color: '#3b82f6',
     skills: [
       { name: 'Machine Learning', level: 80 },
       { name: 'Data Science', level: 78 },
@@ -42,7 +42,7 @@ const techBadges = [
   { name: 'Docker', icon: '🐳', color: '#2496ED' },
   { name: 'Tailwind', icon: '🎨', color: '#06B6D4' },
   { name: 'Git', icon: '🔧', color: '#F05032' },
-  { name: 'AI/ML', icon: '🤖', color: '#FF6B6B' },
+  { name: 'AI/ML', icon: '🤖', color: '#a855f7' },
   { name: 'SQL', icon: '🗄️', color: '#336791' },
   { name: 'FastAPI', icon: '⚡', color: '#009688' },
   { name: 'C++', icon: '⚙️', color: '#00599C' },
@@ -66,7 +66,7 @@ function SkillBar({ name, level, color, delay }) {
           {level}%
         </motion.span>
       </div>
-      <div className="h-2 bg-dark-600 rounded-full overflow-hidden">
+      <div className="h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
         <motion.div
           className="h-full rounded-full skill-bar-fill"
           style={{ background: `linear-gradient(90deg, ${color}aa, ${color})` }}
@@ -99,7 +99,7 @@ function TechBadge({ name, icon, color, index }) {
       <span className="text-xl">{icon}</span>
       <span
         className="font-mono text-sm font-medium transition-colors"
-        style={{ color: 'rgb(148 163 184)' }}
+        style={{ color: 'rgb(203 213 225)' }}
       >
         {name}
       </span>
@@ -113,7 +113,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-32 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#bf5fff]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#a855f7]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -128,7 +128,7 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             My <span className="gradient-text">Arsenal</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#bf5fff] mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#a855f7] mx-auto rounded-full" />
         </motion.div>
 
         {/* Skill bars grid */}
@@ -163,7 +163,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Tech badges marquee-style */}
+        {/* Tech badges */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -171,7 +171,7 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h3 className="font-mono text-slate-400 text-sm uppercase tracking-widest">Technologies I work with</h3>
+          <h3 className="font-mono text-slate-300 text-sm uppercase tracking-widest">Technologies I work with</h3>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-3">

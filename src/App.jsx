@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Loader from './components/Loader';
 import ErrorBoundary from './components/ErrorBoundary';
+import ChakraBg from './components/ChakraBg';
 
 // Lazy-load below-the-fold sections for faster initial paint
 const About    = lazy(() => import('./components/About'));
@@ -67,12 +68,12 @@ function CursorGlow() {
       <div
         ref={cursorRef}
         className="fixed w-40 h-40 rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 hidden md:block"
-        style={{ background: 'radial-gradient(circle, rgba(0,245,255,0.04) 0%, transparent 70%)', transition: 'none' }}
+        style={{ background: 'radial-gradient(circle, rgba(255,140,0,0.05) 0%, transparent 70%)', transition: 'none' }}
       />
       <div
         ref={dotRef}
-        className="fixed w-2 h-2 rounded-full bg-[#00f5ff] pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 hidden md:block"
-        style={{ boxShadow: '0 0 8px #00f5ff' }}
+        className="fixed w-2 h-2 rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 hidden md:block"
+        style={{ background: '#ff8c00', boxShadow: '0 0 8px #ff8c00, 0 0 16px #ff4500' }}
       />
     </>
   );
@@ -85,7 +86,7 @@ function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00f5ff] via-[#bf5fff] to-[#ff0080] origin-left z-[60]"
+      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#ff8c00] via-[#ff4500] to-[#cc1a00] origin-left z-[60]"
       style={{ scaleX }}
     />
   );
@@ -94,7 +95,8 @@ function ScrollProgress() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <div className="relative min-h-screen bg-[#030712] text-slate-100 overflow-x-hidden">
+      <div className="relative min-h-screen naruto-bg bg-[#030712] text-slate-100 overflow-x-hidden">
+        <ChakraBg />
         <Loader />
         <ScrollProgress />
         <CursorGlow />

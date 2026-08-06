@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#00f5ff] to-[#bf5fff] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#00f5ff] to-[#a855f7] flex items-center justify-center">
               <Code2 size={14} className="text-black" />
             </div>
             <span className="font-mono font-bold gradient-text">Yuvraj Mangutkar</span>
@@ -28,18 +28,18 @@ export default function Footer() {
 
           {/* Center text */}
           <motion.p
-            className="font-mono text-xs text-slate-500 flex items-center gap-1"
+            className="font-mono text-xs text-slate-400 flex items-center gap-1"
             whileHover={{ color: '#00f5ff' }}
           >
             <span className="text-[#00f5ff]/50">&lt;</span>
-            <span className="text-[#bf5fff]">coded</span>
+            <span className="text-[#a855f7]">coded</span>
             <span className="text-[#00f5ff]/50">/&gt;</span>
             {' '}by Yuvraj with{' '}
             <motion.span
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Heart size={12} className="text-[#ff0080] fill-[#ff0080]" />
+              <Heart size={12} className="text-[#a855f7] fill-[#a855f7]" />
             </motion.span>
             {' '}&amp; too much{' '}
             <span className="text-yellow-400">☕</span>
@@ -59,7 +59,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, color: '#00f5ff', y: -2 }}
-                className="text-slate-600 transition-colors"
+                className="text-slate-400 transition-colors"
                 aria-label={label}
               >
                 <Icon size={16} />

@@ -1,39 +1,46 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { GraduationCap, Rocket, Brain, Target } from 'lucide-react';
+import { GraduationCap, Rocket, Brain, Code2, Award, Terminal, CheckCircle2 } from 'lucide-react';
 
 const stats = [
-  { value: '3rd', label: 'Year Engineering', icon: GraduationCap },
-  { value: '2+', label: 'Projects Built', icon: Rocket },
-  { value: 'AI', label: 'Specialization', icon: Brain },
-  { value: '∞', label: 'Problems Solved', icon: Target },
+  { value: 'BE 4th Year', label: 'AIDS Engineering @ SPPU', icon: GraduationCap },
+  { value: 'Full Stack', label: 'React • Python • Java', icon: Rocket },
+  { value: 'AI / ML', label: 'Agents & Deep Learning', icon: Brain },
+  { value: 'Production Ready', label: 'Deployed Apps & Systems', icon: Award },
 ];
 
 const timeline = [
   {
     year: '2023',
-    title: 'Just a Student',
-    desc: "Enrolled at SPPU — didn't know a single programming language. Pure curiosity, zero experience.",
+    title: 'Computer Engineering Foundation',
+    desc: 'Began journey at Savitribai Phule Pune University (SPPU). Built strong foundations in algorithms, data structures, and computer science core concepts.',
     color: '#00f5ff',
   },
   {
     year: '2024',
-    title: 'Python Ignition 🐍',
-    desc: 'Slowly picked up Python from scratch and gradually mastered it — functions, OOP, automation, the whole deal.',
-    color: '#bf5fff',
+    title: 'Python & Data Structures Mastery 🐍',
+    desc: 'Mastered Python programming, OOP design patterns, automation scripts, and problem-solving techniques.',
+    color: '#a855f7',
   },
   {
     year: '2025',
-    title: 'Full Stack Python + AI 🤖',
-    desc: 'Leveled up with Django, FastAPI & Python full-stack. Dived into ML, Generative AI, Agentic AI. Started grinding LeetCode for problem solving.',
-    color: '#ff0080',
+    title: 'Full Stack Python & AI Engineering 🤖',
+    desc: 'Built intelligent Django & FastAPI microservices, integrated LLMs & Machine Learning pipelines, and scaled full-stack web applications.',
+    color: '#3b82f6',
   },
   {
-    year: '2026',
-    title: 'React + Java Enterprise 🚀',
-    desc: 'Began mastering React & Java Full Stack to build SPA applications for enterprise-grade systems.',
-    color: '#00ff9f',
+    year: '2026 (Present)',
+    title: 'React & Enterprise Systems Architecture 🚀',
+    desc: 'Spearheading modern single-page applications with React.js, Tailwind CSS, Java enterprise backend tools, and AI agent frameworks.',
+    color: '#00f5ff',
   },
+];
+
+const highlights = [
+  'Specializing in Artificial Intelligence & Data Science Engineering',
+  'Proficient in building production full-stack React & Django / FastAPI apps',
+  'Experienced with Docker containerization & cloud deployment platforms',
+  'Active problem solver with strong Data Structures & Algorithms knowledge',
 ];
 
 function StatCard({ value, label, icon: Icon, index }) {
@@ -43,17 +50,17 @@ function StatCard({ value, label, icon: Icon, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="glass-card rounded-xl p-6 text-center group cursor-default"
+      whileHover={{ y: -4 }}
+      className="glass-card rounded-2xl p-6 text-left group border border-slate-800/80 hover:border-[#00f5ff]/30 transition-all"
     >
-      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00f5ff]/20 to-[#bf5fff]/20 flex items-center justify-center mx-auto mb-3 group-hover:from-[#00f5ff]/30 group-hover:to-[#bf5fff]/30 transition-all">
+      <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center mb-4 group-hover:border-[#00f5ff]/40 group-hover:bg-[#00f5ff]/10 transition-all">
         <Icon size={22} className="text-[#00f5ff]" />
       </div>
-      <div className="text-3xl font-black gradient-text mb-1">{value}</div>
-      <div className="text-xs font-mono text-slate-500 uppercase tracking-wider">{label}</div>
+      <div className="text-xl font-extrabold text-white mb-1 tracking-tight">{value}</div>
+      <div className="text-xs font-mono text-slate-400">{label}</div>
     </motion.div>
   );
 }
@@ -63,116 +70,119 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#00f5ff]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#bf5fff]/5 rounded-full blur-3xl" />
-
+    <section id="about" className="relative py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20 space-y-3"
         >
-          <p className="font-mono text-[#00f5ff] text-sm tracking-widest uppercase mb-3">02. About</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Who Am <span className="gradient-text">I?</span>
+          <p className="font-mono text-[#00f5ff] text-xs font-semibold tracking-widest uppercase">02. About Me</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+            Engineering <span className="gradient-text">Excellence</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00f5ff] to-[#bf5fff] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[#00f5ff] to-[#a855f7] mx-auto rounded-full mt-4" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left — Bio */}
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-5 text-slate-400 leading-relaxed"
-            >
-              <p>
-                Hey there! I'm{' '}
-                <span className="text-[#00f5ff] font-semibold">Yuvraj Mangutkar</span>, a passionate
-                third-year Engineering student specializing in{' '}
-                <span className="text-[#bf5fff] font-semibold">Artificial Intelligence & Data Science</span>{' '}
-                at my college.
-              </p>
-              <p>
-                I'm someone who loves building things — from intelligent AI systems to beautiful
-                full-stack web apps. My goal is to bridge the gap between{' '}
-                <span className="text-[#ff0080] font-semibold">cutting-edge AI</span> and{' '}
-                <span className="text-[#00ff9f] font-semibold">real-world applications</span> that
-                make a difference.
-              </p>
-              <p>
-                Currently open to exciting opportunities in{' '}
-                <span className="text-[#00f5ff] font-semibold">Full Stack Development</span> and{' '}
-                <span className="text-[#bf5fff] font-semibold">AI Engineering</span>. Let's build
-                something awesome together!
-              </p>
-            </motion.div>
-
-            {/* Quick info */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="glass-card rounded-xl p-5 space-y-3"
-            >
-              {[
-                { label: 'Name', value: 'Yuvraj Mangutkar', color: '#00f5ff' },
-                { label: 'University', value: 'SPPU — AI & Data Science', color: '#bf5fff' },
-                { label: 'Email', value: 'Mangutkaryuvraj@gmail.com', color: '#ff0080' },
-                { label: 'Status', value: '🟢 Open to Work', color: '#00ff9f' },
-              ].map(({ label, value, color }) => (
-                <div key={label} className="flex items-center gap-4 font-mono text-sm">
-                  <span className="text-slate-500 w-16 flex-shrink-0">{label}:</span>
-                  <span style={{ color }}>{value}</span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right — Timeline */}
+        {/* Info Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 items-start mb-20">
+          {/* Left Narrative */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <div className="glass-card rounded-2xl p-8 space-y-6 border border-slate-800">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-[#00f5ff]/10 text-[#00f5ff]">
+                  <Code2 size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-white">Full Stack &amp; AI Developer</h3>
+              </div>
+
+              <div className="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                <p>
+                  I am <span className="text-white font-semibold">Yuvraj Mangutkar</span>, a final-year (4th year) 
+                  Engineering student specializing in <span className="text-[#00f5ff] font-medium">Artificial Intelligence &amp; Data Science</span> at SPPU.
+                </p>
+                <p>
+                  My core passion lies in engineering intelligent software systems that seamlessly combine modern frontend user experiences with powerful backend AI architectures.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-slate-800/80 space-y-3">
+                <h4 className="font-mono text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Key Competencies:</h4>
+                {highlights.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                    <CheckCircle2 size={16} className="text-[#00f5ff] flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Details Badge Table */}
+            <div className="glass-card rounded-2xl p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 border border-slate-800 font-mono text-xs">
+              <div>
+                <span className="text-slate-400 block mb-1">LOCATION</span>
+                <span className="text-white font-semibold">Pune, Maharashtra, India</span>
+              </div>
+              <div>
+                <span className="text-slate-400 block mb-1">DEGREE</span>
+                <span className="text-[#00f5ff] font-semibold">B.E. AI &amp; Data Science</span>
+              </div>
+              <div>
+                <span className="text-slate-400 block mb-1">EMAIL</span>
+                <span className="text-white font-semibold truncate block">Mangutkaryuvraj@gmail.com</span>
+              </div>
+              <div>
+                <span className="text-slate-400 block mb-1">AVAILABILITY</span>
+                <span className="text-[#a855f7] font-semibold">Open to Work (Immediate)</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right — Journey Timeline */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative pl-10"
+            className="lg:col-span-6 relative pl-8"
           >
             <div className="timeline-line" />
             <div className="space-y-8">
               {timeline.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.4 + i * 0.15 }}
-                  className="relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.3 + i * 0.15 }}
+                  className="relative group"
                 >
-                  {/* Dot */}
+                  {/* Timeline Point */}
                   <div
-                    className="absolute -left-[34px] w-4 h-4 rounded-full border-2 border-current flex items-center justify-center"
-                    style={{ color: item.color }}
+                    className="absolute -left-[33px] top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-slate-950 flex items-center justify-center"
+                    style={{ borderColor: item.color }}
                   >
                     <div
-                      className="w-2 h-2 rounded-full animate-pulse"
+                      className="w-1.5 h-1.5 rounded-full"
                       style={{ backgroundColor: item.color }}
                     />
                   </div>
 
-                  <div className="glass-card rounded-xl p-5 group hover:border-[#00f5ff]/30 transition-colors">
-                    <div
-                      className="font-mono text-xs mb-1 tracking-widest"
+                  <div className="glass-card rounded-2xl p-6 border border-slate-800/80 group-hover:border-[#00f5ff]/30 transition-all">
+                    <span
+                      className="font-mono text-xs font-bold tracking-widest px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 inline-block mb-3"
                       style={{ color: item.color }}
                     >
                       {item.year}
-                    </div>
-                    <h4 className="font-bold text-white mb-1">{item.title}</h4>
-                    <p className="text-slate-400 text-sm">{item.desc}</p>
+                    </span>
+                    <h4 className="font-bold text-white text-base mb-1.5">{item.title}</h4>
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -180,8 +190,8 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} {...stat} index={i} />
           ))}

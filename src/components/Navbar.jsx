@@ -28,7 +28,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'glass border-b border-[#00f5ff]/10 shadow-[0_4px_30px_rgba(0,245,255,0.05)]'
+          ? 'glass border-b border-[#00f5ff]/15 shadow-[0_4px_30px_rgba(0,245,255,0.08)]'
           : 'bg-transparent'
       }`}
     >
@@ -38,7 +38,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f5ff] to-[#bf5fff] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00f5ff] to-[#a855f7] flex items-center justify-center shadow-[0_0_15px_rgba(0,245,255,0.3)]">
             <Code2 size={16} className="text-black" />
           </div>
           <span className="font-mono font-bold text-lg gradient-text">YM</span>
@@ -59,17 +59,17 @@ export default function Navbar() {
                 smooth={true}
                 duration={800}
                 offset={-80}
-                className="relative font-medium text-sm text-slate-400 hover:text-[#00f5ff] transition-colors duration-300 cursor-pointer group font-mono"
+                className="relative font-medium text-sm text-slate-300 hover:text-[#00f5ff] transition-colors duration-300 cursor-pointer group font-mono"
                 activeClass="!text-[#00f5ff]"
               >
-                <span className="text-[#00f5ff]/50 mr-1">0{i + 1}.</span>
+                <span className="text-[#00f5ff]/60 mr-1">0{i + 1}.</span>
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#00f5ff] group-hover:w-full transition-all duration-300" />
               </Link>
             </motion.div>
           ))}
           <motion.a
-            href="/resume.pdf"
+            href="/yuvraj_resume.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -123,13 +123,20 @@ export default function Navbar() {
                     duration={800}
                     offset={-80}
                     onClick={() => setMenuOpen(false)}
-                    className="block font-mono text-slate-400 hover:text-[#00f5ff] transition-colors duration-300 cursor-pointer text-lg"
+                    className="block font-mono text-slate-300 hover:text-[#00f5ff] transition-colors duration-300 cursor-pointer text-lg"
                   >
-                    <span className="text-[#00f5ff]/50 mr-2">0{i + 1}.</span>
+                    <span className="text-[#00f5ff]/60 mr-2">0{i + 1}.</span>
                     {item.name}
                   </Link>
                 </motion.div>
               ))}
+              <motion.a
+                href="/yuvraj_resume.pdf"
+                download
+                className="cyber-btn text-xs text-center mt-2"
+              >
+                Resume
+              </motion.a>
             </div>
           </motion.div>
         )}
