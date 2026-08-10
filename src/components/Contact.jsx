@@ -57,11 +57,46 @@ export default function Contact() {
   const formRef = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState(null); // 'sending' | 'sent' | 'error'
+  const [validationError, setValidationError] = useState('');
+
+  const validateForm = () => {
+    const name = formState.name.trim();
+    const email = formState.email.trim().toLowerCase();
+    const message = formState.message.trim();
+
+    if (!name) {
+      setValidationError('Please enter your name.');
+      return false;
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email || !emailRegex.test(email)) {
+      setValidationError('Please enter a valid email address (e.g., name@example.com).');
+      return false;
+    }
+
+    const recipientEmail = 'mangutkaryuvraj@gmail.com';
+    if (email === recipientEmail) {
+      setValidationError('Please enter your own email address so I can reply to you (cannot use recipient address as sender).');
+      return false;
+    }
+
+    if (!message) {
+      setValidationError('Please enter your message.');
+      return false;
+    }
+
+    setValidationError('');
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     setStatus('sending');
+    setValidationError('');
 
     try {
       await emailjs.sendForm(
@@ -199,7 +234,10 @@ export default function Contact() {
                   type="text"
                   required
                   value={formState.name}
-                  onChange={(e) => setFormState((p) => ({ ...p, name: e.target.value }))}
+                  onChange={(e) => {
+                    setFormState((p) => ({ ...p, name: e.target.value }));
+                    if (validationError) setValidationError('');
+                  }}
                   className="w-full bg-transparent border border-slate-700 rounded-xl px-4 pt-4 pb-3 text-sm text-white font-mono focus:outline-none focus:border-[#00f5ff]/50 focus:shadow-[0_0_10px_rgba(0,245,255,0.1)] transition-all placeholder-transparent"
                   placeholder="Your Name"
                 />
@@ -213,7 +251,10 @@ export default function Contact() {
                   type="email"
                   required
                   value={formState.email}
-                  onChange={(e) => setFormState((p) => ({ ...p, email: e.target.value }))}
+                  onChange={(e) => {
+                    setFormState((p) => ({ ...p, email: e.target.value }));
+                    if (validationError) setValidationError('');
+                  }}
                   className="w-full bg-transparent border border-slate-700 rounded-xl px-4 pt-4 pb-3 text-sm text-white font-mono focus:outline-none focus:border-[#00f5ff]/50 focus:shadow-[0_0_10px_rgba(0,245,255,0.1)] transition-all placeholder-transparent"
                   placeholder="your@email.com"
                 />
@@ -227,13 +268,28 @@ export default function Contact() {
                   required
                   rows={5}
                   value={formState.message}
-                  onChange={(e) => setFormState((p) => ({ ...p, message: e.target.value }))}
+                  onChange={(e) => {
+                    setFormState((p) => ({ ...p, message: e.target.value }));
+                    if (validationError) setValidationError('');
+                  }}
                   className="w-full bg-transparent border border-slate-700 rounded-xl px-4 pt-4 pb-3 text-sm text-white font-mono focus:outline-none focus:border-[#00f5ff]/50 focus:shadow-[0_0_10px_rgba(0,245,255,0.1)] transition-all resize-none placeholder-transparent"
                   placeholder="Your message..."
                 />
               </FloatingLabel>
 
               <input type="hidden" name="to_email" value="mangutkaryuvraj@gmail.com" />
+
+              {/* Validation error message */}
+              {validationError && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-amber-400 text-xs font-mono px-1 bg-amber-500/10 border border-amber-500/30 p-2.5 rounded-lg"
+                >
+                  <AlertCircle size={15} className="flex-shrink-0" />
+                  <span>{validationError}</span>
+                </motion.div>
+              )}
 
               {/* Status messages */}
               {status === 'error' && (
