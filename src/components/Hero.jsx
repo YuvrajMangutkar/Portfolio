@@ -129,7 +129,7 @@ export default function Hero() {
                 <span>Explore Work</span>
               </motion.button>
             </Link>
-            <a href="/yuvraj_resume.pdf" download>
+            <a href="/Yuvraj_Mangutkar.pdf" download>
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
