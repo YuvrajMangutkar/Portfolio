@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "/(favicon.svg|resume.pdf|yuvraj2.png)",
+      "source": "/(favicon.svg|yuvraj_resume.pdf|yuvraj2.png)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
