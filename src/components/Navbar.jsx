@@ -69,7 +69,7 @@ export default function Navbar() {
             </motion.div>
           ))}
           <motion.a
-            href="/yuvraj_resume.pdf"
+            href="/Yuvraj_Mangutkar.pdf"
             download
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -131,7 +131,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <motion.a
-                href="/yuvraj_resume.pdf"
+                href="/Yuvraj_Mangutkar.pdf"
                 download
                 className="cyber-btn text-xs text-center mt-2"
               >

@@ -36,7 +36,7 @@ const projects = [
       'A data-driven college preference platform for MHT-CET aspirants that classifies colleges as Reach, Match, Safe, or Explore and compares placement metrics, recruiters, packages, ratings, and campus images.',
     tags: ['React', 'FastAPI', 'Python', 'Machine Learning', 'Data Science'],
     github: 'https://github.com/YuvrajMangutkar/CapAdvisor',
-    live: 'https://github.com/YuvrajMangutkar/CapAdvisor',
+    live: 'https://cap-advisor.vercel.app/',
     color: '#00f5ff',
     accentColor: '#a855f7',
     icon: Globe,
