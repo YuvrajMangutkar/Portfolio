@@ -29,6 +29,32 @@ const projects = [
     icon: Globe,
     featured: false,
   },
+  {
+    id: 3,
+    title: 'CAP Advisor',
+    description:
+      'A data-driven college preference platform for MHT-CET aspirants that classifies colleges as Reach, Match, Safe, or Explore and compares placement metrics, recruiters, packages, ratings, and campus images.',
+    tags: ['React', 'FastAPI', 'Python', 'Machine Learning', 'Data Science'],
+    github: 'https://github.com/YuvrajMangutkar/CapAdvisor',
+    live: 'https://github.com/YuvrajMangutkar/CapAdvisor',
+    color: '#00f5ff',
+    accentColor: '#a855f7',
+    icon: Globe,
+    featured: false,
+  },
+  {
+    id: 4,
+    title: 'News Whisper',
+    description:
+      'An open-source, multi-surface news delivery engine that filters and synthesizes Indian news into spoken-style summaries in English, Hindi, and Marathi across a web dashboard, CLI pipeline, and Chrome extension.',
+    tags: ['React', 'Python', 'Groq', 'Cloudflare', 'Chrome Extension'],
+    github: 'https://github.com/NewsWhisper/News-Whisper',
+    live: 'https://news-whisper-india.vercel.app/',
+    color: '#a855f7',
+    accentColor: '#00f5ff',
+    icon: Cpu,
+    featured: false,
+  },
 ];
 
 function TiltCard({ project, index }) {
